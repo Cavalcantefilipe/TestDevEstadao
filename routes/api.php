@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('carros/{id?}', 'CarroController@getCarros');
+Route::post('carros', 'CarroController@createCarro');
+Route::put('carros/{id}', 'CarroController@updateCarro');
+Route::delete('carros/{id}', 'CarroController@deleteCarro');
